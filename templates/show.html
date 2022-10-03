@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .button {
+          border: none;
+          color: black;
+          padding: 8px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+
+        .bg {
+            background-color: bisque;
+        }
+        
+        .button1 {background-color: #4CAF50;}
+    </style>
+    <title>show</title>
+</head>
+<body class = "bg">
+    <center>
+    <form action="/upload" method="POST">
+        <input class = "button button1" type="submit" value="Upload">
+    </form>   
+    <form action="/search" method="POST" enctype = "multipart/form-data">
+        <label for="fname">Search Word :</label><br>
+        <input type="text" name="word"><br><br>
+        <input class = "button button1" type="submit" value="Show">
+        <p>{{ showword }}</p>
+    </form>
+    
+    <h1>top 5 words with the most</h1>
+        <form action= "/topword" method = "POST" enctype = "multipart/form-data">
+             <input class = "button button1" type = "submit" value="Topword"/>
+        </form>
+    <h1>Ner</h1>
+        <form action= "/nerpage" method="POST">
+            <input class = "button button1" type = "submit" value="ner"/>
+        </form>
+    <form action="/fakenews" method="POST" enctype = "multipart/form-data">
+    <label for="fname">Input news : </label><br>
+    <input type="text" name="forr"><br><br>
+    <input class = "button button1" type="submit" value="Show">
+    <p>{{ fakeask }}</p>
+    </form>
+    </center>
+</body>
+</html>
